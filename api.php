@@ -55,7 +55,7 @@ else
 if(!isset($errorMSG))
 {
 	if(mysqli_query($conn, "INSERT INTO `files` (`id`, `link`, `filename`) VALUES (NULL, 'https://cdn.dlsoftbd.com/upload/$newfilename', '$newfilename');")){
-		echo json_encode(array("message" => "Image Uploaded Successfully", "status" => true));
+		echo json_encode(array("message" => "Image Uploaded Successfully", "link" => "https://cdn.dlsoftbd.com/upload/" . $newfilename, "status" => true));
 	}else{
 		echo json_encode(array("message" => "DB IMAGE UPLOAD FAILD", "status" => false));
 	}
